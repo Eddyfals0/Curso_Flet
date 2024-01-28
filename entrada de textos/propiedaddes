@@ -1,0 +1,26 @@
+import flet as ft
+
+def main(page: ft.Page):
+    page.window_height, page.window_width = 400, 400
+    # Define una función que se ejecutará cuando el valor del cuadro de texto cambie
+    def on_text_change(e):
+        print(f"El texto ha cambiado a: {e.control.value}")
+
+    # Crea un cuadro de texto de entrada con varias propiedades y comportamientos y lo añade a la página
+    page.add(
+        ft.TextField(
+            label="Elementos de A",  # Etiqueta del cuadro de texto
+            hint_text="elemento1,elemeto2,elemento3",  # Texto de sugerencia
+            icon=ft.Icon(ft.icons.FAVORITE),  # Icono
+            prefix_text="A = {",  # Prefijo
+            suffix_text="}",  # Sufijo
+            disabled=False,  # No está desactivado
+            read_only=False,  # No es de solo lectura
+            on_change=on_text_change,  # Función a ejecutar cuando el valor cambie
+            password=False,  # No es un campo de contraseña
+            multiline=True,  # Permite la entrada de varias líneas de texto
+            #border=ft.Border(color=ft.colors.BLUE, width=2, style=ft.BorderStyle.SOLID),  # Borde personalizado
+        )
+    )
+
+ft.app(target=main)
