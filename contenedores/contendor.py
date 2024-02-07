@@ -2,14 +2,14 @@ import flet as ft
 
 def main(page: ft.Page):
     page.title = "Proyecto conjuntos"
-    
+    page
     # Centra los controles en la página
     #page.vertical_alignment = ft.MainAxisAlignment.CENTER
     #page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     
     # Crea un contenedor con un gradiente de color
     gradient_container = ft.Container(
-    content=ft.Column( 
+        content=ft.Column( 
         [
             ft.Row(
                 [
@@ -58,14 +58,22 @@ def main(page: ft.Page):
             ),
             ft.Row(
                 [
-                    ft.FilledButton(icon="SETTINGS_BACKUP_RESTORE", text = "Actualizar")
+                    ft.FilledButton(icon="SETTINGS_BACKUP_RESTORE",
+                                    text = "Actualizar",
+                                    
+                                    )
+                ],
+                alignment=ft.MainAxisAlignment.CENTER,
+            ),
+            ft.Row(
+                [
+                    ft.Text("∀�∈�,∃!�∈�:�(�)=�∀x∈A,∃!y∈B:f(x)=y")
                 ],
                 alignment=ft.MainAxisAlignment.CENTER,
             )
         ],
         alignment=ft.MainAxisAlignment.CENTER,
     ),
-    #bgcolor = "#6b04fd",
     border_radius=10,
     width=650,
     height=250,
@@ -73,9 +81,28 @@ def main(page: ft.Page):
             begin=ft.alignment.top_center,
             end=ft.alignment.bottom_center,
             colors=["#6b04fd", "#2c0076"],
-        ),
+        )
     )
 
+
+    contenedoroperaciones = ft.Container(
+        content=ft.Row(
+            [
+                
+            ],
+            alignment=ft.MainAxisAlignment.CENTER,
+        ),
+        border_radius=10,
+        width=650,
+        height=250,
+        gradient=ft.LinearGradient(
+                begin=ft.alignment.top_center,
+                end=ft.alignment.bottom_center,
+                colors=["#6b04fd", "#2c0076"],
+        )        
+    )
+    
+    
     
     page.add(
         ft.Row(
@@ -84,6 +111,13 @@ def main(page: ft.Page):
             ],
             alignment = ft.MainAxisAlignment.CENTER
         ),
+        ft.Row(
+            [
+                contenedoroperaciones
+            ],
+            alignment = ft.MainAxisAlignment.CENTER
+        )
+        
 
     )
 
